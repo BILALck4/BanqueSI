@@ -12,7 +12,7 @@ Assurez-vous d'avoir les éléments suivants installés avant de lancer l'applic
 ## Configuration
 
 1. Clonez le dépôt sur votre machine locale.
-
+PORT: http://localhost:8080/
 git clone https://github.com/Bilalck4/BanqueSi.git
 
 *       *Fonctionnalités**
