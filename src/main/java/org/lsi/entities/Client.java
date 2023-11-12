@@ -3,6 +3,14 @@ package org.lsi.entities;
 import java.io.Serializable;
 import java.util.Collection;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+
+
 @Entity
 public class Client implements Serializable {
     @Id

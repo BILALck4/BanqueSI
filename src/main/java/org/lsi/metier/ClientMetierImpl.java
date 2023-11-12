@@ -13,7 +13,6 @@ public class ClientMetierImpl implements ClientMetier {
     private ClientRepository clientRepository;
     @Override
     public Client saveClient(Client c) {
-        // TODO Auto-generated method stub
         return clientRepository.save(c);
     }
     @Override
