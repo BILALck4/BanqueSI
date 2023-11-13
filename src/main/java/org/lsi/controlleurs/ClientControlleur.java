@@ -40,13 +40,23 @@ public class ClientControlleur {
         model.addAttribute("current",page);
         model.addAttribute("keyword",keyword);
 
-        return "clients";
+        return "Client/clients";
     }
 
     @PostMapping("/clients/add")
     public String addClient(@ModelAttribute Client client) {
         clientService.addClient(client);
         return "redirect:/clients";
+    }
+    @GetMapping("/clients/formClients")
+    public String formClient(Model model){
+        model.addAttribute("client",new Client());
+        return "Client/formClients";
+    }
+    @GetMapping("/clients/delete")
+    public String Delete(Long id, int page,String keyword){
+        clientRepository.deleteById(id);
+        return "redirect:/clients?page="+page+"&keyword="+keyword;
     }
 
     @GetMapping("/")

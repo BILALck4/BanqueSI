@@ -21,16 +21,16 @@ public class EmployeController {
     public String showEmployees(Model model) {
         List<Employe> employees = employeService.getAllEmployees();
         model.addAttribute("employees", employees);
-        return "employee/list";
+        return "Employee/list";
     }
-
-
-    @PostMapping("/employees/add")
-    public String addEmployee(@ModelAttribute Employe employe) {
-        employeService.addEmployee(employe);
-        return "redirect:/employees";
-    }
-
+//
+//
+//    @PostMapping("/employees/add")
+//    public String addEmployee(@ModelAttribute Employe employe) {
+//        employeService.addEmployee(employe);
+//        return "redirect:/employees";
+//    }
+//
     @GetMapping("/index")
     public String home1() {
         return "index";
