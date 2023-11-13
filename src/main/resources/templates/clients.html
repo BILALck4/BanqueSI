@@ -18,11 +18,11 @@
 
 <main>
     <!-- Your main content goes here -->
-    <div layout:fragment="content1">
-        <div class="card">
+    <div layout:fragment="content1" style="margin-bottom: 3px;margin-top: 3px;">
+        <div class="card ">
             <div class="card-header">Liste des clients</div>
             <div class="card-body">
-                <form method="get" th:action="@{index}">
+                <form method="get" th:action="@{clients}">
                     <label>KEY WORD</label>
                     <input type="text" name="keyword" th:value="${keyword}">
                     <button type="submit" class="btn btn-primary">Chercher</button>
@@ -59,7 +59,7 @@
                     <li th:each="page,status:${pages}">
                         <a th:class="${status.index==current?'btn btn-primary':'btn btn-outline ml-1'}" class="btn btn-outline-info ml-3"
                            th:text="${status.index}-${status.current}"
-                           th:href="@{index(page=${status.index},keyword=${keyword})}">
+                           th:href="@{clients(page=${status.index},keyword=${keyword})}">
                         </a>
                     </li>
                 </ul>

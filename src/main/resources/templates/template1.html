@@ -26,9 +26,6 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Employe</a>
-                </li>
                 <!--               CLIENTS DROPDOWN-->
 
                 <li class="nav-item dropdown">
@@ -37,7 +34,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
                         <li><a class="dropdown-item" >Insertion nouveau client</a></li>
-                        <li><a class="dropdown-item" th:href="@{index}">Chercher un client</a></li>
+                        <li><a class="dropdown-item" th:href="@{clients}">Chercher un client</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
@@ -68,27 +65,24 @@
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <!--   OPERATIONS DROPDOWN-->
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Operation
+                    </a>
+                    <ul class=" dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <li><a class="dropdown-item" >Versement </a></li>
+                        <li><a class="dropdown-item" >Retrait </a></li>
+                        <li><a class="dropdown-item" th:href="@{index}">Consulter les operations</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Consulter tout</a></li>
+                    </ul>
                 </li>
             </ul>
-            <!--   OPERATIONS DROPDOWN-->
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Clients
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                    <li><a class="dropdown-item" >Versement </a></li>
-                    <li><a class="dropdown-item" >Retrait </a></li>
-
-                    <li><a class="dropdown-item" th:href="@{index}">Consulter les operations</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </li>
             <!--   form search/find     -->
-            <form class="d-flex" method="get" th:action="@{index}">
+            <form class="d-flex" method="get" th:action="@{clients}">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" th:value="${keyword}">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
@@ -96,7 +90,7 @@
     </div>
 </nav>
 
-    <div layout:fragment="content1">
+    <div layout:fragment="content1" class="mt-6">
         <!-- Your content goes here -->
     </div>
 

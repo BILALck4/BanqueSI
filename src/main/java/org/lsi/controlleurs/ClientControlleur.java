@@ -28,7 +28,7 @@ public class ClientControlleur {
     private ClientService clientService;
 
 
-    @GetMapping(path = "/index")
+    @GetMapping(path = "/clients")
     public String client(Model model,
                           @RequestParam(name="page",defaultValue = "0") int page,
                           @RequestParam(name="size",defaultValue = "5")int size,
@@ -42,18 +42,13 @@ public class ClientControlleur {
 
         return "clients";
     }
-    @GetMapping("/clients")
-    public String showClients(Model model) {
-        List<Client> clients = clientService.getAllClients();
-        model.addAttribute("clients", clients);
-        return "client/list";
-    }
 
     @PostMapping("/clients/add")
     public String addClient(@ModelAttribute Client client) {
         clientService.addClient(client);
         return "redirect:/clients";
     }
+
     @GetMapping("/")
     public String home(){
         return "redirect:/index";
