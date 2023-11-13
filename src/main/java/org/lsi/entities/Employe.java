@@ -5,7 +5,14 @@ import java.util.Collection;
 import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+
+@Data
+@AllArgsConstructor
 public class Employe implements Serializable {
 
     @Id

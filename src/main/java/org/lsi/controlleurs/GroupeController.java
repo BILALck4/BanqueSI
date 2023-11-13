@@ -27,7 +27,7 @@ public class GroupeController {
     public String showGroups(Model model) {
         List<Groupe> groups = groupeService.getAllGroups();
         model.addAttribute("groups", groups);
-        return "group/list";
+        return "Groupe/groupe";
     }
 
     @PostMapping("/groups/add")

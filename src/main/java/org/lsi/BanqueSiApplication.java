@@ -1,6 +1,7 @@
 package org.lsi;
 
 import org.lsi.dao.EmployeRepository;
+import org.lsi.entities.Employe;
 import org.lsi.services.ClientService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,19 +18,19 @@ public class BanqueSiApplication {
     }
 
 
-    @Bean
-    CommandLineRunner commandLineRunner(PatientRepository patientRepository){
-        return args->{
-            EmployeRepository.save(new Patient(1,"BILAL",new Date(),false,112));
-            patientRepository.save(new Patient(2,"MOHAMMED",new Date(),false,211));
-            patientRepository.save(new Patient(3,"BRAHIM",new Date(),false,331));
-            patientRepository.save(new Patient(4,"HASSAN",new Date(),false,122));
-
-
-            patientRepository.findAll().forEach(p->{
-                System.out.println(p.getNom());
-            });
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(EmployeRepository employeRepository){
+//        return args->{
+//            employeRepository.save(new Employe(2,"BILAL CHEKHCHOU"));
+//            employeRepository.save(new Employe(2,"MOHAMMED",new Date(),false,211));
+//            employeRepository.save(new Employe(3,"BRAHIM",new Date(),false,331));
+//            employeRepository.save(new Employe(4,"HASSAN",new Date(),false,122));
+//
+//
+//            employeRepository.findAll().forEach(p->{
+//                System.out.println(p.getNomEmploye());
+//            });
+//        };
+//    }
 
 }

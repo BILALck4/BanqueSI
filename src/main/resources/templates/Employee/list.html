@@ -35,7 +35,7 @@
       <tr th:each="employee : ${employees}">
         <td th:text="${employee.codeEmploye}"></td>
         <td th:text="${employee.nomEmploye}"></td>
-        <td th:text="${employee.employeSup}"></td>
+        <td th:text="${employee.employeSup.nomEmploye}"></td>
 
         <!-- Add other columns as needed -->
         <td>
