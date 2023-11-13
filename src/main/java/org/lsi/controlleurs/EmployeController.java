@@ -24,11 +24,18 @@ public class EmployeController {
         return "employee/list";
     }
 
+
     @PostMapping("/employees/add")
     public String addEmployee(@ModelAttribute Employe employe) {
         employeService.addEmployee(employe);
         return "redirect:/employees";
     }
+
+    @GetMapping("/index")
+    public String home1() {
+        return "index";
+    }
+
 
     // Other methods for employee-group assignment, etc.
 }
