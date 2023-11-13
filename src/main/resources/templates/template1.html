@@ -29,13 +29,41 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Employe</a>
                 </li>
+                <!--               CLIENTS DROPDOWN-->
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Patients
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Clients
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" >Insertion</a></li>
-                        <li><a class="dropdown-item" th:href="@{index}">Chercher patients</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <li><a class="dropdown-item" >Insertion nouveau client</a></li>
+                        <li><a class="dropdown-item" th:href="@{index}">Chercher un client</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            <!--               EMPLOYEE DROPDOWN-->
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Employe
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <li><a class="dropdown-item" >Insertion un nouveaux membre</a></li>
+                        <li><a class="dropdown-item" th:href="@{index}">Chercher Employe</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+<!--                GROUPE DROPDOWN-->
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Groupe
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <li><a class="dropdown-item" >Ajouter un nouveau groupe</a></li>
+                        <li><a class="dropdown-item" th:href="@{index}">Chercher groupe</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
@@ -44,6 +72,22 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
+            <!--   OPERATIONS DROPDOWN-->
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Clients
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                    <li><a class="dropdown-item" >Versement </a></li>
+                    <li><a class="dropdown-item" >Retrait </a></li>
+
+                    <li><a class="dropdown-item" th:href="@{index}">Consulter les operations</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li>
+            <!--   form search/find     -->
             <form class="d-flex" method="get" th:action="@{index}">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" th:value="${keyword}">
                 <button class="btn btn-outline-success" type="submit">Search</button>
