@@ -14,7 +14,29 @@
 
 
 <div layout:fragment="content1" class="mt-6">
+    <form th:action="@{/employees/save}" th:object="${Employee}" method="post">
 
+        <!-- ID Field (Read-only for new employees) -->
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" th:field="*{codeEmploye}" />
+        <br/>
+
+
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:field="*{nomEmploye}" />
+        <br/>
+
+        <!--       -->
+
+        <label for="idSup">idSup:</label>
+        <input type="text" id="idSup" name="idSup" th:field="*{employeSup.codeEmploye}" />
+        <br/>
+        <!-- Submit Button -->
+
+        <button type="submit">Save</button>
+
+    </form>
 
 </div>
 

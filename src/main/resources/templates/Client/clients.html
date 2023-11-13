@@ -43,7 +43,7 @@
                         <td th:text="${client.nomClient}"></td>
                         <td th:text="${client.comptes.size()}"></td>
                         <td>
-                            <a onclick="return confirm('Etes vous sure?')" class="btn btn-danger" >
+                            <a onclick="return confirm('Etes vous sure?')" th:href="@{delete(id=${client.codeClient}, page=${current}, keyword=${keyword})}" class="btn btn-danger" >
                                 Delete
                             </a>
                         </td>

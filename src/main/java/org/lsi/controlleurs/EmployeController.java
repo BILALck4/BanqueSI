@@ -1,6 +1,9 @@
 package org.lsi.controlleurs;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
+import org.lsi.dao.EmployeRepository;
+import org.lsi.entities.Client;
 import org.lsi.entities.Employe;
 import org.lsi.services.EmployeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +17,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class EmployeController {
 
     @Autowired
+    private EmployeRepository employeRepository;
+    @Autowired
     private EmployeService employeService;
+
+
 
     @GetMapping("/employees")
     public String showEmployees(Model model) {
@@ -38,28 +46,22 @@ public class EmployeController {
         return "index";
     }
 
-//    @PostMapping(path = "/save")
-//    public String save(Model model, @Valid Employe employe, int page, String keyword, BindingResult bindingResult) {
-//        if (bindingResult.hasErrors()) {
-//            return "formPatients";
-//        }
-//
-//        if (patient.getId() != 0) {
-//            Patient existingPatient = patientRepository.findById(patient.getId()).orElse(null);
-//            if (existingPatient != null) {
-//                existingPatient.setNom(patient.getNom());
-//                existingPatient.setDateNaissance(patient.getDateNaissance());
-//                existingPatient.setMalade(patient.isMalade());
-//                existingPatient.setScore(patient.getScore());
-//
-//                patientRepository.save(existingPatient);
-//            }
-//        } else {
-//            patientRepository.save(patient);
-//        }
-//
-//        return "redirect:/index?page="+page+"&keyword="+keyword;
-//    }
+    @GetMapping("/employees/EmployeeForm")
+    public String formEmployee(Model model){
+        model.addAttribute("Employee",new Employe());
+        return "/Employee/employeeForm";
+    }
+
+    @PostMapping(path = "/employees/save")
+    public String save(Model model, @Valid Employe employe, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "/Employee/employeeForm";
+        }
+
+        employeRepository.save(employe);
+
+        return "redirect:/employees";
+    }
 
 
     // Other methods for employee-group assignment, etc.

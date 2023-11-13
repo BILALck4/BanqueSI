@@ -1,5 +1,6 @@
 package org.lsi.controlleurs;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.lsi.dao.ClientRepository;
 import org.lsi.services.ClientService;
@@ -10,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,15 +45,27 @@ public class ClientControlleur {
         return "Client/clients";
     }
 
+    @PostMapping(path = "clients/save")
+    public String save(Model model, @Valid Client client, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "formPatients";
+        }
+
+            clientRepository.save(client);
+
+        return "redirect:/clients?keyword="+client.getNomClient();
+    }
+
+
     @PostMapping("/clients/add")
     public String addClient(@ModelAttribute Client client) {
         clientService.addClient(client);
-        return "redirect:/clients";
+        return "redirect:/clients/ClientForm";
     }
-    @GetMapping("/clients/formClients")
+    @GetMapping("/clients/ClientForm")
     public String formClient(Model model){
         model.addAttribute("client",new Client());
-        return "Client/formClients";
+        return "Client/ClientForm";
     }
     @GetMapping("/clients/delete")
     public String Delete(Long id, int page,String keyword){
@@ -64,9 +78,5 @@ public class ClientControlleur {
         return "redirect:/index";
     }
 
-    @GetMapping("/formClient")
-    public String formPatients(Model model){
-        model.addAttribute("patient",new Client());
-        return "formClient";
-    }
+
 }
