@@ -73,6 +73,7 @@ public class ClientControlleur {
         return "redirect:/clients?page="+page+"&keyword="+keyword;
     }
 
+
     @GetMapping("/")
     public String home(){
         return "redirect:/index";

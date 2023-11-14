@@ -1,8 +1,14 @@
 package org.lsi.entities;
 import java.util.Date;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @DiscriminatorValue("CE")
+@Data
+@AllArgsConstructor
 public class CompteEpargne extends Compte {
 
     private double taux;

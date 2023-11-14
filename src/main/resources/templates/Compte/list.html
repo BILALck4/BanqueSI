@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+
+
+</head>
+<body>
+
+
+<div layout:fragment="content1" class="mt-6">
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Liste des Comptes</title>
+        <!-- Ajoutez ici les liens vers les fichiers CSS nécessaires -->
+    </head>
+    <body>
+
+    <h2>Liste des Comptes</h2>
+
+    <a th:href="@{/comptes/CompteForm}" class="btn btn-primary mb-3">Add Employee</a>
+
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Code Compte</th>
+            <th>Date de Création</th>
+            <th>Solde</th>
+            <th>Type de Compte</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Utilisez Thymeleaf pour parcourir la liste des comptes -->
+        <tr th:each="compte : ${comptes}">
+            <td th:text="${compte.codeCompte}"></td>
+            <td th:text="${#dates.format(compte.dateCreation, 'dd/MM/yyyy')}"></td>
+            <td th:text="${compte.solde}"></td>
+            <td th:text="${compte.__proto__.constructor.name}"></td>
+            <td>
+                <!-- Ajoutez ici des liens ou des boutons pour effectuer des actions sur chaque compte -->
+                <a th:href="@{'/comptes/details/' + ${compte.codeCompte}}">Détails</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    </body>
+    </html>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

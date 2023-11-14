@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+
+
+</head>
+<body>
+
+
+<div layout:fragment="content1" class="mt-6">
+  <div class="container">
+    <form th:object="${compte}" th:action="@{/comptes/save}" method="post">
+      <!-- Champs communs à tous les comptes -->
+      <label for="codeCompte">Code Compte:</label>
+      <input type="text" id="codeCompte" name="codeCompte" th:field="*{codeCompte}" required>
+
+      <label for="dateCreation">Date Creation:</label>
+      <input type="date" id="dateCreation" name="dateCreation" th:field="*{dateCreation}" required>
+
+      <label for="solde">Solde:</label>
+      <input type="number" id="solde" name="solde" th:field="*{solde}" required>
+
+      <!-- Champs spécifiques à CompteCourant -->
+      <div th:if="${compte.typeCompte == 'CC'}">
+        <label for="decouvert">Découvert:</label>
+        <input type="number" id="decouvert" name="decouvert" th:field="*{decouvert}" required>
+      </div>
+
+      <!-- Champs spécifiques à CompteEpargne -->
+      <div th:if="${compte.typeCompte == 'CE'}">
+        <label for="taux">Taux:</label>
+        <input type="number" id="taux" name="taux" th:field="*{taux}" required>
+      </div>
+
+      <!-- Ajoutez ici d'autres champs spécifiques si nécessaire -->
+
+      <button type="submit">Enregistrer</button>
+    </form>
+
+  </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>
