@@ -19,6 +19,7 @@
 <main>
     <!-- Your main content goes here -->
     <div layout:fragment="content1" style="margin-bottom: 3px;margin-top: 3px;">
+        <a th:href="@{/clients/ClientForm}" class="btn btn-primary mb-3">Add Client</a>
         <div class="card ">
             <div class="card-header">Liste des clients</div>
             <div class="card-body">
@@ -43,7 +44,7 @@
                         <td th:text="${client.nomClient}"></td>
                         <td th:text="${client.comptes.size()}"></td>
                         <td>
-                            <a onclick="return confirm('Etes vous sure?')" class="btn btn-danger" >
+                            <a onclick="return confirm('Etes vous sure?')" th:href="@{delete(id=${client.codeClient}, page=${current}, keyword=${keyword})}" class="btn btn-danger" >
                                 Delete
                             </a>
                         </td>

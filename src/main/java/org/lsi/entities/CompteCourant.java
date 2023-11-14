@@ -14,13 +14,12 @@ public class CompteCourant extends Compte {
         this.decouvert = decouvert;
     }
     private double decouvert;
-    public CompteCourant(String codeCompte, Date dateCreation, double solde,
-                         double decouvert) {
+    public CompteCourant(String codeCompte, Date dateCreation, double solde, double decouvert) {
         super(codeCompte, dateCreation, solde);
         this.decouvert = decouvert;
     }
     public CompteCourant() {
         super();
-// TODO Auto-generated constructor stub
+        // TODO Auto-generated constructor stub
     }
 }
