@@ -33,3 +33,12 @@ git clone https://github.com/Bilalck4/BanqueSi.git
 
             **Auteurs**
     BILAL CHEKHCHOU (@BILALCK4)
+
+![image](https://github.com/BILALck4/BanqueSI/assets/115404316/cb95ee6d-b0e2-4af6-938a-4c5d51b674f9)
+
+![image](https://github.com/BILALck4/BanqueSI/assets/115404316/e1efe9fc-fa9f-4393-a255-042ac1f55654)
+
+![image](https://github.com/BILALck4/BanqueSI/assets/115404316/a78bf0b9-8bb5-4812-8eee-d214b7415675)
+
+
+THE PROJECT IS NOT COMPLETTED YES PART MESSING: OPERATION 
