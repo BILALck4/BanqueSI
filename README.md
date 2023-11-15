@@ -19,24 +19,35 @@ git clone https://github.com/Bilalck4/BanqueSi.git
     Consultation des comptes bancaires.
     Effectuer des dépôts et des retraits.
     Historique des transactions.
-        **~~~~Technologies Utilisées**~~~~
+        Technologies Utilisées
     Spring Boot
     Thymeleaf
     Base de données H2 (en mémoire)
-        **Contribuer**
+#Contribuer
+
         Fork le projet (https://github.com/Bilalck4/BanqueSi/)
         Créez votre branche de fonctionnalité (git checkout -b fonctionnalite/Amelioration)
         Committez vos modifications (git commit -am 'Ajout d'une nouvelle fonctionnalité')
         Pushez la branche (git push origin fonctionnalite/Amelioration)
         Ouvrez une Pull Request
         Merci de contribuer!
+    
 
-            **Auteurs**
+ #Auteurs
     BILAL CHEKHCHOU (@BILALCK4)
+
+#L'Accueil
 
 ![image](https://github.com/BILALck4/BanqueSI/assets/115404316/cb95ee6d-b0e2-4af6-938a-4c5d51b674f9)
 
+
+#CLIENT
+
+
 ![image](https://github.com/BILALck4/BanqueSI/assets/115404316/e1efe9fc-fa9f-4393-a255-042ac1f55654)
+
+#SEARCH
+
 
 ![image](https://github.com/BILALck4/BanqueSI/assets/115404316/a78bf0b9-8bb5-4812-8eee-d214b7415675)
 
