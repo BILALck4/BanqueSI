@@ -11,8 +11,8 @@ Assurez-vous d'avoir les éléments suivants installés avant de lancer l'applic
 
 ## Configuration
 
-1. Clonez le dépôt sur votre machine locale.
-PORT: http://localhost:8080/
+1. Clonez le dépôt sur votre machine locale. (you cna change it in application.propreties if you want server.port=8090)
+PORT: http://localhost:8090/
 git clone https://github.com/Bilalck4/BanqueSi.git
 
 *       *Fonctionnalités**
