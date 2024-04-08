@@ -23,7 +23,7 @@ git clone https://github.com/Bilalck4/BanqueSi.git
     Spring Boot
     Thymeleaf
     Base de données H2 (en mémoire)
-#Contribuer
+# Contribuer
 
         Fork le projet (https://github.com/Bilalck4/BanqueSi/)
         Créez votre branche de fonctionnalité (git checkout -b fonctionnalite/Amelioration)
@@ -33,20 +33,20 @@ git clone https://github.com/Bilalck4/BanqueSi.git
         Merci de contribuer!
     
 
- #Auteurs
+ # Auteurs
     BILAL CHEKHCHOU (@BILALCK4)
 
-#L'Accueil
+# L'Accueil
 
 ![image](https://github.com/BILALck4/BanqueSI/assets/115404316/cb95ee6d-b0e2-4af6-938a-4c5d51b674f9)
 
 
-#CLIENT
+# CLIENT
 
 
 ![image](https://github.com/BILALck4/BanqueSI/assets/115404316/e1efe9fc-fa9f-4393-a255-042ac1f55654)
 
-#SEARCH
+# SEARCH
 
 
 ![image](https://github.com/BILALck4/BanqueSI/assets/115404316/a78bf0b9-8bb5-4812-8eee-d214b7415675)
